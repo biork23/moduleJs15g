@@ -15,8 +15,8 @@ if(isNaN(a) === false && isNaN(b) === false){
     console.error('algunos de los caracteres no son numeros')
 }
 
-for(i = 1; ,= 10; i++)
+for(i = 1; j <= 10; i++)
     console.log(`tabla del ${1*3}`)
-    for(j = 1; j ,= 10 ; j++) {
+    for(j = 1; j = 10 ; j++) {
         console.log(`${i} x ${j} = ${ i * j }`)
     }
