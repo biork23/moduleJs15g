@@ -1,47 +1,40 @@
-
-const a = parseInt(prompt(" dame el valor de A"))
-const b = parseInt(prompt("dame el valor de B"))
-console.log(isNaN(a), isNaN(b))
-
-if(isNaN(a) === false && isNaN(b) === false){
-    if(a>b){
-        console.log(a/b)
-    } else if(a<b){
-        console.log(a+b)
-    } else if(a === b){
-        console.log(a * b)
+let number1 = parseInt(prompt('Ingresa tu primer numero'))
+let number2 = parseInt(prompt('Ingresa tu segundo numero'))
+let number3 = parseInt(prompt('Ingresa tu tercer numero'))
+if ( !isNaN(number1) && !isNaN(number2) && !isNaN(number3)) {
+    if( number1 === number2 && number1 === numnber3) {
+        console.log(`Los numeros son iguales`)
+    }else if(number1 > number2 && number1 > number3) {
+        console.log(`El numero ${number1} es el mayor`)
+    }else if(number2 > number1 && number2 > number3) {
+        console.log(`El numero ${number2} es el mayor`)
+    }else {
+        console.log(`El numero ${number3} es el mayor`)
     }
 } else {
-    console.error('algunos de los caracteres no son numeros')
+    console.error('algunos valores no son numericos')
 }
 
-for(i = 1; j <= 10; i++)
-    console.log(`tabla del ${1*3}`)
-    for(j = 1; j = 10 ; j++) {
-        console.log(`${i} x ${j} = ${ i * j }`)
+
+const weather = prompt('Por favor ingresa como esta el clima de tu ciudad \n 1. Soleado \n 2. Lluvioso \n 3. Nevando \n 4. Nublado')
+const temp = parseInt(prompt('Ingresa la temperatura en Celcius'))
+
+if(!isNaN(temp)){
+    let farenheitGrade = ( temp * 9/5) + 32
+    switch (weather){
+        case 'Soleado':
+            console.log( `En tu ciudad, el dia esta 'Soleado' con una temperatura de ${farenheitGrade}°F`)
+            break
+        case 'Lluvioso':
+            console.log(`En tu ciudad, el dia esta 'Lluvioso' con una temperatura de ${farenheitGrade}°F`)
+            break
+        case 'Nevando':
+            console.log(`En tu ciudad, el dia esta 'Nevando' con una temperatura de ${farenheitGrade}°F`) 
+            break
+        case 'Nublado':
+            console.log(`En tu ciudad, el dia esta 'Nublado' con una temperatura de ${farenheitGrade}°F`) 
+            break
+            default:
+                console.log('No entiendo cual es tu clima')          
     }
-
-/**
- * 
- * Pedir al usuario por prompt un numero entre 1 y 100
- * verificar si es un par o impar
- * imprimir en resultado en consola
- * Máximo de lineas para este ejercicio, 2 lineas de código
- * Hint: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator
- */
-
-/**
- * 
- * Pedir al usuario el dia de la semana 
- * p.ej. lunes, martes, ...
- * Imprimir en consola el número del dia de la semana equivalente
- * es decir:
- * domingo -> 1, lunes -> 2, martes -> 3, etc...
- */
-
-/**
- * 
- * Pedir al usuario 2 numeros 
- * Imprimir en consola cual es el menor de los 2
- * Imprimir en consola cual es el mayor de los 2
- */
+}
