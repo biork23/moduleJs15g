@@ -2,7 +2,7 @@ let number1 = parseInt(prompt('Ingresa tu primer numero'))
 let number2 = parseInt(prompt('Ingresa tu segundo numero'))
 let number3 = parseInt(prompt('Ingresa tu tercer numero'))
 if ( !isNaN(number1) && !isNaN(number2) && !isNaN(number3)) {
-    if( number1 === number2 && number1 === numnber3) {
+    if( number1 === number2 && number1 === number3) {
         console.log(`Los numeros son iguales`)
     }else if(number1 > number2 && number1 > number3) {
         console.log(`El numero ${number1} es el mayor`)
