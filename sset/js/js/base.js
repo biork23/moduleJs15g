@@ -107,3 +107,60 @@ function sumNumbers(a, b = 5){
     return suma
 }
 let resultado = sumNumbers(4)
+
+
+const tablasArrow = (j = 10) => {
+    for (i = 1; i <= 10; i++){
+        console.log(`Tabla del ${i}`)
+        for (j = 1; j<= 10; j++){
+             console.log(`${i} * ${j} = ${i*j}`)
+        }
+    }
+   return tablasArrow
+}
+
+tablasArrow()
+
+
+
+
+
+const sumasRow = (newNum = 10) =>{
+    let resultado = 0
+    for (i = 0; i <= newNum; i++){
+        resultado = resultado + i
+    }
+    return console.log(resultado)
+}
+sumasRow()
+
+
+
+
+
+
+const sumaDigitosRow = (cantidad = '1234') => {
+    for (i = 0; i < cantidad.length; i++){
+        sumatoria += parseInt(cantidad[i])
+    }     return console.log(sumatoria)
+}
+let digitos = prompt('Introduce una cantidad')
+let sumatoria = 0
+
+sumaDigitosRow(digitos)
+
+
+
+
+
+
+const sumaMultiplosRow = (j = 3, k = 5) => {
+    let multiplos = 0
+    for (i = 100; i >= 1; i--){        
+        if (i % 3 === 0 && i % 5 ===0){
+            multiplos = multiplos + i
+        }
+    }
+   return console.log(`La suma total de los multiplos es: ${multiplos}`)	
+}
+sumaMultiplosRow()
