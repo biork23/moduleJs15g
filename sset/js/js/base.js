@@ -1,25 +1,16 @@
 
-
-console.log('funciones')
-
-function suma(){
-    console.log('2 + 2')
-    
-}
-
-suma()
-
+//
 //funcion con parametros
 function suma(a, b) {
     console.log(a + b)
 }
 
-suma (9, 3)
+//suma (9, 3)
 
 function toCelcius(farenheit){
     console.log( (5 / 9) * (farenheit - 32) )
 } 
- toCelcius(100)
+ //toCelcius(100)
 
 //funcion que pida el nombre al ususario
 // y lo imprima en cosola
@@ -33,7 +24,7 @@ function askName (firstName) {
     console.log(firstName)
 }
 
-askName(prompt('Escribe tu nombre'))
+//askName(prompt('Escribe tu nombre'))
 
 function reverseWord (word){
     let wordReversed = ''
@@ -55,7 +46,7 @@ function tables(){
         }
     }
 }
-tables()
+//tables()
 //Función 2:
 //Imprimir en consola la suma de 1 a N, siendo N un numero entre 1 y 100
 
