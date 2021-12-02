@@ -6,7 +6,7 @@
  * hint: https://www.w3schools.com/jsref/jsref_join.asp
  */
 
- const reverse = str => str.split('').reverse().join('@');
+ const reverse = str => str.split('').reverse().join('');
 
  reverse('hello world');     
 
