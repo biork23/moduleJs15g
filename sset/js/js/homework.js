@@ -1,92 +1,112 @@
 
 
-// 1. Generar una function
-// que reciba un array como parametro
-// y devuelva solo los items que son pares
-// p.ej. onlyEvenValues( [1, 2, 3, 4] )
-// -> [2, 4]
-// Aplicar el metodo .forEach()
-// hint: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push
+/**
+ * arr.forEach()
+ * Dado el siguiente array 
+ * ['string','value','min','asdfghjk']
+ * Hacer una funcion que devuelva el string con mas caracteres
+ * 
+ */
 
-const onlyEvenValues = arrNumbers => {
-    let arrEven = []
-
-    arrNumbers.array.forEach(item => {
-        if (item % 2 === 0){
-            arrEven.push(item)
+ const mostLarge  = (arr) => {
+    let strLarge =  arr[0]
+    arr.forEach( item => {
+        if(strLarge.length <= item.length ){
+            strLarge = item
         }
-        
     })
-    return arrEven
+    return strLarge
 }
-let arrAfiltrar = [1,2,3,4,5,6]
-let soloPares = onlyEvenValues(arrAfiltrar)
-console.log(soloPares)
-  
 
+let mostLargeStr = mostLarge( ['st','val','min','as'] )
+// console.log(mostLargeStr)
 
+/**
+ * arr.map()
+ * Dado un array 
+ * Hacer una funcion que devuelva el mismo array
+ * Pero con los items al reves
+ * P.ej. reverseStringArr( ['string','value','min'] )
+ * Salida: ['gnirts','eulav','nim']
+ * 
+ */
 
-// 2. function que reciba como parametro una array de strings
-// y devuelva la primer y ultima letra del string
-// de cada uno de los items del array 
-// -> firstAndLast (['hola', 'mundo'] )
-// -> ['ha', 'mo']
-// .forEach() o .map()
-
-const firstAndLast = arrStrings => {
-    let arrayToFill = []
-    arrStrings.forEach((item) => {
-        arrayToFill.push(item.slice(0,1) + item.slice(-1))
+const reverseStringArr  = (arr) => {
+    let reverseString = []
+    reverseString = arr.map( (item) => {
+        return item.split('').reverse().join('')
     })
-    return arrayToFill
+    return reverseString
 }
+// const reverseStringArr = (arr) => {
+//     return arr.map( (item) => item.split('').reverse().join('') )
+// }
+
+// const reverseStringArr = (arr) => arr.map( (item) => item.split('').reverse().join('') )
+
 
 
 /**
- * 3. Funcion que reciba un array de numeros
- * y devuelva el promedio
- * -> getAverage( [10, 8, 9, 7] )
- * -> 8.5
+ * arr.filter(), .map()
+ * Funcion que reciba un array de strings y numeros
+ * Filtre solo los strings
+ * luego, Capitalice cada string
+ * luego, filtre solo los que tengan mas de 5 caracteres
+ * y al final, los que tengan al menos 2 letras "a" 
+ * 
+ * p.ej. filterStrings( ['guadalajara', 3, 'caracas', 'Oslo', 'brasil', 0] )
+ * Salida -> ['Guadalajara', 'Caracas']
  */
 
-const getAverage = (arr) => {
-    let add =0, totalNumbers = arr.length
-    arr.forEach(element => add += element)
-    return add / totalNumbers
+// const filterStrings  = (arr) => {
+//     return arr.filter(item => typeof item === 'string')
+//     .map( item => {
+//         return item.slice(0,1).toUpperCase() + item.slice(1).toLowerCase()
+//     })
+//     .filter( item => {
+//         return item.length > 5
+//     })
+//     .filter( item => {
+//         return item.split('a').length >= 3
+//     })
+// }
 
-}
-let result = getAverage([10,8,9,7])
-console.log(result)
-
-//  4. funcion
-// dado un array de años, filtre los elementos
-// y devuelva un array con los años que son bisiesto
-// convertLeapYear( [1990, 2000, 2001, 2020] )
-// -> [2000,2020]
-// .forEach()
-// hint: https://docs.microsoft.com/es-es/office/troubleshoot/excel/determine-a-leap-year
-
-const convertLeapYear = arr => {
-    
-}
-
-
-
-const firstAndLast = arrStrings => {
-    let arrayToFill = []
-    let resultadoMap = arrStrings.map((palabra) => {
-        let primera = palabra.slice(0,1)
-        let ultima = palabra.slice(palabra.length - 1)
-        return `${primera}${ultima}`
+const filterStringsLarge  = (arr) => {
+    let onlyStrings = []
+    onlyStrings = arr.filter((item) => {
+        if(typeof item === 'string' ) {
+            return item
+        }
     })
-    return arrayToFill
+
+    let capStrings = []
+    capStrings = onlyStrings.map((item) => {
+        let capWord = ''
+        capWord = item.slice(0,1).toUpperCase() + item.slice(1).toLowerCase()
+        return capWord
+    })
+    
+    let largestStr = []
+    largestStr = capStrings.filter((item) => {
+        if(item.length > 5){
+            return item
+        }
+    })
+    let onlyAA = []
+
+    onlyAA = largestStr.filter( item => {
+        if(item.split('a').length >= 3){
+            return item
+        }
+    })
+
+    return onlyAA
+
 }
 
-
-
-// ['hOla','munDo']
-// -> ['Hola','Mundo']
-
-const capitalizeWithMap = (arr) => {
-
+const filterStrings  = (arr) => {
+    return arr.filter( item => typeof item === 'string')
+    .map( item => item.slice(0,1).toUpperCase() + item.slice(1).toLowerCase())
+    .filter( item => item.length > 5)
+    .filter( item => item.split('a').length >= 3)
 }
