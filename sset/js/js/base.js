@@ -1,213 +1,202 @@
-// Función 1:
-// valor por defecto 10
-// Imprimir en consola las tablas de multiplicar del 1 al 10
+// Propiedades
+// key: valor
+let carObject = {
+  modelo: 'jetta',
+  marca: 'VW',
+  color: 'rojo',
+  year: 2020,
+  tenencias: [2019, 2020, 2021]
+}
 
-const printMultiTables = (tableLimit = 10) => {
-    for (i = 1; i <= tableLimit; i++) {
-      for (j = 1; j <= 10; j++) {
-        console.log(`${i} x ${j} = ${i * j}`)
-      }
-    }
-  }
-  
-  // Función 2:
-  // valor por defecto 10
-  // Imprimir en consola la suma de 1 a N, siendo N un numero entre 1 y 100
-  
-  const addNumbersRange = (numberEnd = 10) => {
-    let addRange = 0
-    if (!isNaN(parseInt(numberEnd)) || (numberEnd >= 1 && numberEnd <= 100)) {
-      for (i = 1; i <= numberEnd; i++) {
-        addRange += i
-      }
-    } else {
-      console.log("No es un número valido")
-    }
-    return addRange
-  }
-  
-  // Función 3:
-  // valor por defecto "1234"
-  // Imprimir en consola la suma total de todos los digitos de una cantidad
-  // p.ej. "1234" -> 10
-  
-  const additionNumbers = (numberValue = 1234) => {
-    let numberToAdd = numberValue.toString()
-    let addNumber = 0
-  
-    for (i = 0; i < numberToAdd.length; i++) {
-      addNumber = addNumber + parseInt(numberToAdd[i])
-    }
-  
-    return addNumber
-  }
-  
-  // Función 4:
-  // valor por defecto 3 y 5, sino el que ponga el usuario
-  // Imprimir en consola la suma de los múltiplos de 3 y 5 contenidos entre el 1 y 100
-  // -> 233168
-  
-  const getMulti = (numberMulti = "default") => {
-    let addMulti = 0
-    if (numberMulti === "default") {
-      for (i = 0; i <= 100; i++) {
-        i % 3 === 0 || i % 5 === 0 ? (addMulti += i) : ""
-      }
-    } else {
-      for (i = 0; i <= 100; i++) {
-        i % numberMulti === 0 ? (addMulti += i) : ""
-      }
-    }
-  
-    return addMulti
-  }
-  
-  /**
-   * Funcion que pida el nombre al usuario
-   * y lo imprima en consola
-   */
-  
-  function getName() {
-    let nameUser = prompt("Dame tu nombre", "jorge")
-    console.log(nameUser)
-  }
-  // getName()
-  
-  /**
-   * Funcion que reciba una palabra
-   * y la retorne al revés
-   */
-  
-  function stringReverse(stringToReverse) {
-    // hola
-    let stringReversed = ""
-    for (let i = stringToReverse.length - 1; i >= 0; i--) {
-      stringReversed += stringToReverse[i]
-    }
-    return stringReversed
-  }
-  
-  // Funcion que permita convertir grados fahrenheit a celsius
-  
-  function toCelsius(fahrenheit) {
-    let celsiusGrades = (5 / 9) * (fahrenheit - 32)
-  
-    // retorno de la funcion
-    return celsiusGrades
-  }
+
+// Objeto Koder
+let koder = {
+  name: 'jorge luis',
+  lastName: 'Camarillo',
+  age: 30,
+  generation: 6,
+  modulos: ['js','node js', 'cloud'],
+}
+
+
+// Create
+// koder['isMentorCorchete'] = false
+// koder.modulos = ['js','node js', 'cloud']
+koder.ismentor = true
+
+// Read
+// console.log(koder.isMentor)
+// console.log(koder.name.toUpperCase())
+
+// Update
+koder.name = 'juan'
+koder.modulos.push('otro item')
+
+// Delete
+// delete object.propiedad
+delete koder.age
+
+
+
+
+// [].forEach((value, index, array) => {})
+// [].filter((value, index, array) => {})
+// [].map((value, index, array) => {})
+// [].reduce((acc, value, index, array) => {})
+
+let cities = {
+  "49": "Germany",
+  "41": "Switzerland",
+  "44": "Great Britain"
+}
+
+for (let city in cities) {
+  // console.log(city)
+}
+
+// for in
+for(let propiedad in koder) {
+  // console.log( propiedad , koder[propiedad] )
+}
+
+// 1. name : jorge luis
+// 2. lastName : Camarillo
+// ...
+
+let counter = 1
+
+for(let propiedad in koder) {
+  //inicio de cada ciclo
+  // console.log(`${counter}. ${propiedad} : ${koder[propiedad]}`)
+  counter++
+  // fin de cada ciclo
+}
+
+// Ejercios
+/**
+* Del siguiente objeto
+* 1. Contar el numero de empleados
+* 2. Suma total a pagar
+* -> Son 3 empleados y el total es 130000
+*/
+
+let salarios = {
+  'juan': 30000,
+  'Albert': 50000,
+  'jorge': 50000
+}
+
+let total = 0
+let employes = 0
+
+for(salario in salarios) {
+  // console.log(salario, salarios[salario])
+  total += salarios[salario]
+  employes++
+}
+
+// console.log(`Son ${employes} empleados y el total es ${total}`)
+
+
+
 
 
 /**
- * arr.filter(function)
- */
+* Arrow function
+* Recibir un objeto
+* Devolver un array con todas las propiedadades que son un string
+* Entrada: objOnlyStrings
+* [modelo,marca,color, version, orige]
+*/
 
+const filterStringObject = (obj) => {
+  let onlyStrArr = []
+  for(propiedad in obj){
+      if(typeof obj[propiedad] === 'string'){
+          onlyStrArr.push(propiedad)
+      }
+  }
+  return onlyStrArr
+}
+
+let objOnlyStrings =  {
+  modelo: 'jetta',
+  marca: 'VW',
+  color: 'rojo',
+  year: 2020,
+  tenencias: [2019, 2020, 2021],
+  version: 'sport',
+  origen: 'México'
+}
+
+// console.log(filterStringObject(objOnlyStrings))
+// -> [modelo,marca,color, version, origen]
+
+
+// [1,2,3,4,5,'hola', false, [1,2,3,4], {}, {}, {}]
+
+// [ {}, {}, {}]
+
+// [1,2,3,4,5]
+
+// Array de objetos
+let koders =  [
+  {
+      name: 'jorge luis',
+      lastName: 'Camarillo',
+      age: 30,
+      generation: 6,
+      modulos: ['js','node js', 'cloud'],
+  },
+  {
+      name: 'Erik',
+      lastName: 'Gutierrez',
+      age: 20,
+      generation: 15,
+      modulos: ['js'],
+  },
+  {
+      name: 'Sara',
+      lastName: 'Reveles',
+      age: 24,
+      generation: 12,
+      modulos: ['js'],
+  }
+]
+
+koders.forEach((element, index, array) => {
+  // console.log(element.lastName)
+  // console.log(element.age)
+  // console.log(element.generation)
+  // console.log(element.modulos)
+  console.log(`${element.name} ${element.lastName} tiene ${element.age} años`)  
+})
 
 /**
- * Dado un array de numeros
- * Filtrar los que son pares
- */
+* 1. Hacer una funcion que reciba un objeto de koders
+* 2. Obtener la suma de todas las edades
+* 3. Retornar el total
+* hint: .forEach() .reduce()
+*/
 
- let arrToFilter = [1,2,3,4,5,6,7]
- // let arrFiltered = arrToFilter.filter(item => item % 2 === 0 )
- let arrFiltered = []
- 
- // arrFiltered = arrToFilter.filter( (numero) => {
- // 	if(	numero % 2 === 0 ) {
- // 		console.log(numero)
- // 		return numero
- // 	}
- // })
- 
- arrFiltered = arrToFilter.filter( (numero, index, arr) => {
-     if(numero % 2 === 0 ) {
-         return numero
-     }
- })
- 
- // console.log(arrFiltered)
- 
- 
- /**
-  * 
-  * -> ['hola','mundo', 0, 5]
-  * -> ['hola','mundo']
-  * 1. funcion
-  * 2. filtrar solo los que son de typo string
-  * 
-  */
- 
- // const filterStrings = (arr) => {
- // 	let arrStrings = []
- // 	arrStrings = arr.filter((item) => {
- // 		if(typeof item === 'string') {
- // 			return item
- // 		}
- // 	})
- // 	return arrStrings
- // }
- 
- // const filterStrings = (arr) => {
- // 	let arrStrings = []
- // 	arrStrings = arr.filter((item) => {
- // 		return typeof item === 'string' ? item : null
- // 	})
- // 	return arrStrings
- // }
- 
- // filterStrings(['hola','mundo', 0, 5])
- 
- const filterStrings = (arr) => {
-     return arr.filter((item) => typeof item === 'string')
-     .map( (item) => item.toUpperCase())
-     .filter( (item ) => item.slice(0,1) === 'H')
- }
- 
- const filterStringsLarge = (arr) => {
-     let onlyStrings = []
-     onlyStrings = arr.filter( (item) => {
-         if(typeof item === 'string') {
-             return item
-         }
-     })
- 
-     let toUpper = []
-     toUpper = onlyStrings.map( (item) => {
-         return item.toUpperCase()
-     })
- 
-     let onlyH = []
-     onlyH = toUpper.filter( (item ) => { 
-         if(item.slice(0,1) === 'H') {
-             return item
-         }
-     })
- 
-     return onlyH
- }
- 
- 
- 
- let arr = [5,2,3]
- let acumulador = 0
- 
- // arr.forEach( element => {
- // 	acumulador = acumulador + element
- // })
- 
- // console.log(acumulador)
-     
- // arr.reduce()
- let suma = arr.reduce((acc, cv, index, arr)=> {
-     // console.log(acc, cv)
-     return acc + cv
- }, 0 )
- 
- let arrStr = ['hola', 'mundo']
- let concatStr = arrStr.reduce((acc, cv, index, arr)=> {
-     console.log(acc, cv, index, arr )
-     return acc + cv
- 
- }, 'saludo: ')
- 
- console.log(concatStr)
+const getTotalAge = (obj) => {
+  let totalAge = 0
+  totalAge = obj.reduce( (acc, currentValue) => {
+      acc += currentValue.age
+      return acc
+  }, 0)
+  return totalAge
+}
+console.log(getTotalAge(koders))
 
+const getTotalAgeForEach = (obj) => {
+  let totalAge = 0
+  obj.forEach( (cv) => {
+      totalAge += cv.age
+  })
+  return totalAge
+}
+console.log(getTotalAgeForEach(koders))
+
+const getTotalAgeOneLine = (obj) => obj.reduce( (acc, cv) => acc += cv.age, 0)
+console.log(getTotalAgeOneLine(koders))
