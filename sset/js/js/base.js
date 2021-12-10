@@ -85,18 +85,25 @@ ulElement.appendChild(liSecond)
 document.getElementsByTagName('body')[0].appendChild(ulElement)
 // body -> <ul> <li>item 1</li> <li>item 2</li> </ul>
 
-let ulElement = document.createElement('ul')
-document.querySelector('ul').setAttribute('menu')
-document.querySelector('ul').classList.add('menu')
-let liFirst = document.createElement('li')
-liFirst.textContent = 'Home'
-let liSecond = document.createElement('li')
-liSecond.textContent = 'Products'
-let liThirth = document.createElement('li')
-liThirth.textContent = 'Products'
+let ulMenu = document.createElement('ul')
+ulMenu.classList.add('id__menu')
 
+let liMenuHome = document.createElement('li')
+liMenuHome.classList.add('item__menu')
+liMenuHome.textContent = 'Home'
+ulMenu.appendChild(liMenuHome)
 
+let liMenuProducts = document.createElement('li')
+liMenuHome.classList.add('item__menu')
+liMenuProducts.textContent = 'Products'
+ulMenu.appendChild(liMenuProducts)
 
+let liMenuAboutUs = document.createElement('li')
+liMenuAboutUs.classList.add('item__menu')
+liMenuAboutUs.textContent = 'About us'
+ulMenu.appendChild(liMenuAboutUs)
+
+document.getElementsByTagName('body')[0].appendChild(ulMenu)
 
 
 
