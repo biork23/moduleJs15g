@@ -32,3 +32,13 @@
 // crear un listener de #prev
 // aplicar history.back() o history.forward()
 
+
+let prevBtn = document.getElementById('prev')
+let nextBtn = document.getElementById('next')
+
+prevBtn.addEventListener('click', () => {
+    window.history.back()
+})
+nextBtn.addEventListener('click', () => {
+    window.history.forward()
+})
