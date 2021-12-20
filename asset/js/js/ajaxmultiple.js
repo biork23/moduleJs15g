@@ -54,5 +54,7 @@ const printCommentsPost = (arrComments) => {
     document.querySelector('.list__comments').innerHTML = templateComments
 }
 
+
+
 getData('https://jsonplaceholder.typicode.com/posts/1', printCardPost)
 getData('https://jsonplaceholder.typicode.com/posts/1/comments', printCommentsPost)
