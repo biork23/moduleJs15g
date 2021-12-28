@@ -1,32 +1,48 @@
 
 /**
- * 
- * Tarea 1
- * Estudiar promesas JS
- * Esdutiar el api fetch
- * https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
- * 
- */
-
-/**
- * Tarea 2
- * Metodos (verbos http)
- * GET
- * 
- * POST, PUT, PATCH, DELETE
+ * HAcer todos las peticiones ajax con jquery
+ * Listado de post
+ * Edicion de post
+ * Eliminar post
+ * Vista Interior de post
+ * Nuevo post
  */
 
 
-/**
- * Tarea 3
- * Crear una cuenta en firebase
- */
 
 
-/**
- * 
- * Tarea 4
- * Generar un grid de todos los usuarios 
- * https://jsonplaceholder.typicode.com/users
- * 
- */
+//RETO FRONT END
+
+// Medium Minimo
+// Firebase
+
+// -- Home -> Listado de posts
+// --- 1. Desde el mas nuevo al mas antiguo
+// --- 2. Object.keys(objRes).reverse().forEach( objRes[key])
+
+// -- Interior de post
+// --- Titulo
+// --- Abstract
+// --- Autor
+// --- Fecha de creacion
+// --- Tiempo de lectura
+// --- Imagen destacada
+// --- Contenido del post
+
+// -- Edicion de post
+// --- Editar post
+// --- Eliminar post
+
+// -- Crear nuevo post
+// --- Titulo
+// --- Abstract
+// --- Autor
+// --- Fecha de creacion
+// --- Tiempo de lectura
+// --- Imagen destacada (URL de imagen)
+// --- Contenido del post
+
+
+// Plus:
+// Infinite scroll
+// Filtrar por categoria

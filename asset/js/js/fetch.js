@@ -10,7 +10,7 @@
 const getFetch = () => {
     // GET - default
 
-    fetch("https://genjs-292ac-default-rtdb.firebaseio.com/posts/.json")
+    fetch("https://ismael-15gjs-default-rtdb.firebaseio.com/posts/.json")
     .then((res) => {
     return res.json()
     })
@@ -20,7 +20,7 @@ const getFetch = () => {
 
     // DELETE
     let idpost = "-Mr5R9iNmAuGlzOFPOqR"
-    fetch(`https://genjs-292ac-default-rtdb.firebaseio.com/posts/${idpost}.json`, {
+    fetch(`https://ismael-15gjs-default-rtdb.firebaseio.com/posts/${idpost}.json`, {
     method: "DELETE"
     })
 }
@@ -35,7 +35,7 @@ let postFetch = () => {
         "title": "asfdfg"
     }
     
-    fetch(`https://genjs-292ac-default-rtdb.firebaseio.com/posts/.json`, {
+    fetch(`https://ismael-15gjs-default-rtdb.firebaseio.com/posts/.json`, {
         method:'POST',
         header: {
             'Content-Type': 'application/json'
@@ -56,7 +56,7 @@ let patchFetch = () => {
         "author": "test update fetch"
     }
     let idPost = '-Mr5RoWmkleIHp-PyYAW'
-    fetch(`https://genjs-292ac-default-rtdb.firebaseio.com/posts/${idPost}.json`, {
+    fetch(`https://ismael-15gjs-default-rtdb.firebaseio.com/posts/${idPost}.json`, {
         method:'PATCH',
         header: {
             'Content-Type': 'application/json'

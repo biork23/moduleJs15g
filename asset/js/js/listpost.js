@@ -1,19 +1,36 @@
 // GET 
-const getPosts =  (funcionALlamar) => {
-    const xhttp = new XMLHttpRequest()
-    xhttp.open( "GET" , `https://genjs-292ac-default-rtdb.firebaseio.com/posts/.json`, true)
-    xhttp.onload = function(data) {
-        // console.log(data)
-        if(data.target.status === 200){
-            funcionALlamar(data.target.response)
-        }
-    }
-    xhttp.send()
+// const getPosts =  (funcionALlamar) => {
+//     const xhttp = new XMLHttpRequest()
+//     xhttp.open( "GET" , `https://ismael-15gjs-default-rtdb.firebaseio.com/posts/.json`, true)
+//     xhttp.onload = function(data) {
+//         // console.log(data)
+//         if(data.target.status === 200){
+//             funcionALlamar(data.target.response)
+//         }
+//     }
+//     xhttp.send()
+// }
+
+
+const getPosts = (funcionCallback) => {
+    fetch('https://ismael-15gjs-default-rtdb.firebaseio.com/posts/.json')
+    .then((res) => {
+        return res.json()
+    })
+    .then( (response)=> {
+        console.log(response)
+        funcionCallback(response)
+    })
+    .catch((err) => {
+        console.log(err)
+    })
 }
+
+
 
 const funcionCallback =  (posts) => {
     console.log(posts)
-    let parsedPosts = JSON.parse(posts)
+    let parsedPosts = posts
     console.log(parsedPosts)
     let layout = ''
     for(post in parsedPosts) {
